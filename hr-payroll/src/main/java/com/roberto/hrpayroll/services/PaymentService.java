@@ -10,6 +10,7 @@ import org.springframework.web.client.RestTemplate;
 
 import com.roberto.hrpayroll.entities.Payment;
 import com.roberto.hrpayroll.entities.Worker;
+import com.roberto.hrpayroll.feignclients.WorkerFeignClient;
 
 @Service
 public class PaymentService {
@@ -17,7 +18,8 @@ public class PaymentService {
 	@Value("${hr-worker.host}")
 	private String workerHost;
 	
-
+	@Autowired
+	private WorkerFeignClient workerFeignClient;
 		
 	public Payment getPayment(long workerId, int days) {
 		Map<String,String> uriVariables = new HashMap<>();
