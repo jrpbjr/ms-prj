@@ -20,10 +20,7 @@ public class PaymentService {
 	private WorkerFeignClient workerFeignClient;
 		
 	public Payment getPayment(long workerId, int days) {
-		Map<String,String> uriVariables = new HashMap<>();
-		//uriVariables.put("id", ""+workerId);
-		uriVariables.put("id", String.valueOf(workerId));
-		
+				
 		Worker worker = restTemplate.getForObject(workerHost + "/workers/{id}",Worker.class, uriVariables);
 		return new Payment(worker.getName(),worker.getDailyIncome(), days);
 	}
