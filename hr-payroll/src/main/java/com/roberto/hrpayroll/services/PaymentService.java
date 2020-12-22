@@ -23,10 +23,10 @@ public class PaymentService {
 		
 	public Payment getPayment(long workerId, int days) {
 		Map<String,String> uriVariables = new HashMap<>();
-		uriVariables.put("id", String.valueOf(workerId));
+		uriVariables.put("id", ""+workerId);
 		
-		Worker worker = restTemplate.getForObject(workerHost + "/workers/{id}",Worker.class,uriVariables);
-		return new Payment(worker.getName(),worker.getDailyIncome(),days);
+		Worker worker = restTemplate.getForObject(workerHost + "/workers/{id}",Worker.class, uriVariables);
+		return new Payment(worker.getName(),worker.getDailyIncome(), days);
 	}
 
 }
