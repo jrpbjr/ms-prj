@@ -1,5 +1,6 @@
 package com.roberto.hrpayroll.services;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,8 +22,8 @@ public class PaymentService {
 	private RestTemplate restTemplate;
 		
 	public Payment getPayment(long workerId, int days) {
-		Map<String,String> uriVariable;
-		
+		Map<String,String> uriVariables = new HashMap<>();
+		uriVariables.put("id", String.valueOf(workerId));
 		
 		Worker worker = restTemplate.getForObject(,)
 		return new Payment("Bob",200.0,days);
