@@ -21,7 +21,7 @@ public class PaymentService {
 		
 	public Payment getPayment(long workerId, int days) {
 				
-		Worker worker = restTemplate.getForObject(workerHost + "/workers/{id}",Worker.class, uriVariables);
+		Worker worker = 
 		return new Payment(worker.getName(),worker.getDailyIncome(), days);
 	}
 
