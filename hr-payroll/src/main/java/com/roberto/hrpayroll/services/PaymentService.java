@@ -17,9 +17,7 @@ public class PaymentService {
 	@Value("${hr-worker.host}")
 	private String workerHost;
 	
-	
-	@Autowired
-	private RestTemplate restTemplate;
+
 		
 	public Payment getPayment(long workerId, int days) {
 		Map<String,String> uriVariables = new HashMap<>();
