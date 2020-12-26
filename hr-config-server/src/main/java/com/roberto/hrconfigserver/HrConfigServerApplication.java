@@ -22,8 +22,8 @@ public class HrConfigServerApplication implements CommandLineRunner{
 
 	@Override
 	public void run(String... args) throws Exception {
-		System.out.println("USERNAME_GIT = " + usernameGit);
-		System.out.println("PASSWORD_GIT = " + passwordGit);
+		//System.out.println("USERNAME_GIT = " + usernameGit);
+		//System.out.println("PASSWORD_GIT = " + passwordGit);
 		
 	}
 
