@@ -20,7 +20,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 	private BCryptPasswordEncoder passwordEncoder;
 	
 	@Autowired
-	private JwtAccessTokenConverter ccessTokenConverter;
+	private JwtAccessTokenConverter accessTokenConverter;
 	
 	@Autowired
 	private JwtTokenStore tokenStore;
@@ -50,8 +50,11 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 
 	@Override
 	public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
-		// TODO Auto-generated method stub
-		super.configure(endpoints);
+		
+		endpoints.authenticationManager(authenticationManager)
+		.tokenStore(tokenStore)
+		.accessTokenConverter(accessTokenConverter);
+		
 	}
 
 	
